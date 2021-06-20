@@ -31,7 +31,7 @@ main()
     printf("\n\n¿Cuál es tu nombre? (Escribe solamente tu primer nombre)\n");
     scanf(" %s", name); // "%[^\n]%*c" for a string with spaces ex. Ronald Arias
 
-    printf("\n¿Cuál es tu fecha de nacimiento? (Ingresa en este formato --> (XX/XX/XXXX))\n");
+    printf("\n¿Cuál es tu fecha de nacimiento? (Ingresa en este formato ----> (XX/XX/XXXX))\n");
     scanf(" %d/%d/%d", &day, &month, &year);
 
     printf("\n¿Cuál es tu comida favorita (Pizza, Hamgurguesa o Salchipapa)? (*Selecciona solo una opción)\n");
