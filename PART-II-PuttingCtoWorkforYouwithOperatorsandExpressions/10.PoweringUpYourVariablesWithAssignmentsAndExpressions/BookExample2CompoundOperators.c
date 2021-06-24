@@ -34,3 +34,27 @@ main()
     return 0;
     }
 
+
+// WATCH THAT ORDER!
+
+/* The order of operators table can haunt the unwary C programmer. Think about how you would evaluate the
+second of these expressions:
+
+    total = 5;
+    total *= 2 + 3;  // Updates the total variable
+
+At first glance, you might think that the value of total is 13 because you learned earlier that multiplication
+is done before addition.
+Compound multiplication is done after addition.
+
+
+        total *= 2+3;
+              /
+             /
+    is the same thing as this:
+           /
+          /
+   total = total * (2+3);
+
+  because *= is lower than + in the table.
+
