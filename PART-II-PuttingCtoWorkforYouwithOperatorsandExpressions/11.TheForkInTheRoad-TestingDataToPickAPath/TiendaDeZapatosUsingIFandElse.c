@@ -67,11 +67,18 @@ main()
             scanf(" %s", personName);
         }
 
-        else
+        else if (personSex == MUJER)
         {
             printf("\nQué tal, mi nombre es Lucy, ¿cuál es tu nombre?\n");
             scanf(" %s", personName);
         }
+
+        else
+        {
+            printf("INGRESASTE UN VALOR INVÁLIDO, VUELVE A REINICIAR EL PROGRAMA, POR FAVOR!");
+            return 0;
+        }
+
 
 
 
@@ -139,3 +146,10 @@ main()
     return 0;
 }
 
+
+
+/* Put semicolons only at the end of executable statements in the body of the if or the else. Never put a
+semicolon after the if or the else; semicolons go only at the end of complete statements.
+
+As with the body of the if, the body of the else doesn’t require braces if it consists of a single statement—but
+it’s a good idea to use braces anyway. */
