@@ -63,32 +63,20 @@ main()
     // Condicional hombre o mujer
         if (personSex == HOMBRE)
         {
-            printf("Qué tal, mi nombre es Juan, ¿cuál es tu nombre?\n");
+            printf("\nQué tal, mi nombre es Juan, ¿cuál es tu nombre?\n");
             scanf(" %s", personName);
         }
 
-        if (personSex == MUJER)
+        else
         {
-            printf("Qué tal, mi nombre es Lucy, ¿cuál es tu nombre?\n");
+            printf("\nQué tal, mi nombre es Lucy, ¿cuál es tu nombre?\n");
             scanf(" %s", personName);
-        }
-
-        if (personSex > MUJER)
-        {
-            printf("INGRESASTE UN VALOR INVÁLIDO, VUELVE A REINICIAR EL PROGRAMA, POR FAVOR!");
-            return 0;
-        }
-
-        if (personSex < HOMBRE)
-        {
-            printf("INGRESASTE UN VALOR INVÁLIDO, VUELVE A REINICIAR EL PROGRAMA, POR FAVOR!");
-            return 0;
         }
 
 
 
     // Meeting - Shoe Size
-    printf("Mucho gusto %s, ¿qué talla estás buscando?\n", personName);
+    printf("\nMucho gusto %s, ¿qué talla estás buscando?\n", personName);
     scanf(" %d", &shoeSize);
 
 
@@ -96,12 +84,12 @@ main()
     // Size Conditional
         if (shoeSize == SHOE_SIZE_AVAILABLE)
         {
-            printf("¡Oh sí! Tenemos disponible esa talla.");
+            printf("\n¡Oh sí! Tenemos disponible esa talla.");
         }
 
-        if (shoeSize != SHOE_SIZE_AVAILABLE)
+        else
         {
-            printf("¡Oh no! Lo sentimos, solo tenemos disponible la talla %d. ¿Le interesa? (Selecciona 1 si deseas continuar o 2 si deseas finalizar)\n", SHOE_SIZE_AVAILABLE);
+            printf("\n¡Oh no! Lo sentimos, solo tenemos disponible la talla %d. ¿Te interesa? (Selecciona 1 si deseas continuar o 2 si deseas finalizar)\n", SHOE_SIZE_AVAILABLE);
             printf(" %d. SI\n", SI);
             printf(" %d. NO\n", NO);
             scanf(" %d", &shortAnswer);
@@ -109,7 +97,7 @@ main()
             // Negative Answer Conditional
             if (shortAnswer == NO)
             {
-                printf("Lamentamos mucho no poder ayudarte en este momento %s.\n", personName);
+                printf("\n\nLamentamos mucho no poder ayudarte en este momento %s.\a\n", personName);
                 printf("Esperamos verte pronto nuevamente.\n");
                 printf("¡MUCHAS GRACIAS POR TU VISITA!.\n");
                 return 0;
@@ -119,7 +107,7 @@ main()
 
 
     // Select brand shoes
-    printf("¿Qué marca de zapatos estás buscando? Tenemos disponible Venus o Bunky. (Selecciona 1 si desea VENUS o 2 si deseas BUNKY)\n");
+    printf("\n¿Qué marca de zapatos estás buscando? Tenemos disponible Venus o Bunky. (Selecciona 1 si desea VENUS o 2 si deseas BUNKY)\n");
     printf(" %d. VENUS\n", VENUS);
     printf(" %d. BUNKY\n", BUNKY);
     scanf(" %d", &shoeBrand);
@@ -127,7 +115,7 @@ main()
 
 
     // Select color shoes
-    printf("¿Casual o Deportivo?\n (Selecciona 1 si deseas casual, 2 si deseas deportivo o 3 si deseas ambos)\n");
+    printf("\n¿Casual o Deportivo?\n (Selecciona 1 si deseas casual, 2 si deseas deportivo o 3 si deseas ambos)\n");
     printf(" %d. CASUAL\n", CASUAL);
     printf(" %d. DEPORTIVO\n", DEPORTIVO);
     printf(" %d. AMBOS\n", CASUAL_Y_DEPORTIVO);
@@ -135,30 +123,19 @@ main()
 
 
 
+    printf("\n\nGracias por comprar estos zapatos %s!\a\n", personName);
     // Price Conditionals
-        if (shoeType == CASUAL)
-        {
-            printf("Gracias por comprar estos zapatos %s!\a\n", personName);
-            printf("Gastaste en total $%.2f\n", SHOE_PRICE);
-            printf("Esperamos volver a verte pronto.\n");
-            printf("¡MUCHAS GRACIAS VISITARNOS!\n");
-        }
-        if (shoeType == DEPORTIVO)
-        {
-            printf("Gracias por comprar estos zapatos %s!\a\n", personName);
-            printf("Gastaste en total $%.2f\n", SHOE_PRICE);
-            printf("Esperamos volver a verte pronto.\n");
-            printf("¡MUCHAS GRACIAS VISITARNOS!\n");
-        }
         if (shoeType == CASUAL_Y_DEPORTIVO)
         {
-            printf("Gracias por comprar estos zapatos %s!\a\n", personName);
             printf("Gastaste en total $%.2f\n", (SHOE_PRICE*2));
-            printf("Esperamos volver a verte pronto.\n");
-            printf("¡MUCHAS GRACIAS VISITARNOS!\n");
         }
 
+        else
+        {
+            printf("Gastaste en total $%.2f\n", SHOE_PRICE);
+        }
+    printf("Esperamos volver a verte pronto.\n");
+    printf("¡MUCHAS GRACIAS VISITARNOS!\n");
     return 0;
 }
-
 
