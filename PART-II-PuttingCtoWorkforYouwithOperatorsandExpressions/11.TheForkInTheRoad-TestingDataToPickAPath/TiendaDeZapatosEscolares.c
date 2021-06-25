@@ -36,21 +36,29 @@ main()
 {
     setlocale(LC_ALL, "spanish"); // This let me show letter "ñ" "¿"
 
+
+
+    // AD
     printf("\n\n\t\t\t\t\t     -----------------------\n");
     printf("\n\t\t\t\t\t\tSCHOOL SHOES STORE\n\n");
     printf("\t\t\t\t\t       ALL SHOES FOR $19,99");
     printf("\n\n\t\t\t\t\t     -----------------------\n\n\n");
 
 
+
     // SET UP VARIABLES
     char personName[10];
     int personSex, shoeSize, shortAnswer, shoeBrand, shoeType;
+
+
 
     // Seleccionar Sexo de la Persona
     printf("Hola, antes de comenzar necesitamos saber si eres hombre o mujer: (Selecciona 1 si eres HOMBRE o 2 si eres MUJER)\n");
     printf(" %d. HOMBRE\n", HOMBRE);
     printf(" %d. MUJER\n", MUJER);
     scanf(" %d", &personSex);
+
+
 
     // Condicional hombre o mujer
         if (personSex == HOMBRE)
@@ -65,9 +73,13 @@ main()
             scanf(" %s", personName);
         }
 
+
+
     // Meeting - Shoe Size
     printf("Mucho gusto %s, ¿qué talla estás buscando?\n", personName);
     scanf(" %d", &shoeSize);
+
+
 
     // Size Conditional
         if (shoeSize == SHOE_SIZE_AVAILABLE)
@@ -88,8 +100,11 @@ main()
                 printf("Lamentamos mucho no poder ayudarte en este momento %s.\n", personName);
                 printf("Esperamos verte pronto nuevamente.\n");
                 printf("¡MUCHAS GRACIAS POR TU VISITA!.\n");
+                return 0;
             }
         }
+
+
 
     // Select brand shoes
     printf("¿Qué marca de zapatos estás buscando? Tenemos disponible Venus o Bunky. (Selecciona 1 si desea VENUS o 2 si deseas BUNKY)\n");
@@ -97,12 +112,16 @@ main()
     printf(" %d. BUNKY\n", BUNKY);
     scanf(" %d", &shoeBrand);
 
+
+
     // Select color shoes
     printf("¿Casual o Deportivo?\n (Selecciona 1 si deseas casual, 2 si deseas deportivo o 3 si deseas ambos)\n");
     printf(" %d. CASUAL\n", CASUAL);
     printf(" %d. DEPORTIVO\n", DEPORTIVO);
     printf(" %d. AMBOS\n", CASUAL_Y_DEPORTIVO);
     scanf(" %d", &shoeType);
+
+
 
     // Price Conditionals
         if (shoeType == CASUAL)
@@ -126,5 +145,8 @@ main()
             printf("Esperamos volver a verte pronto.\n");
             printf("¡MUCHAS GRACIAS VISITARNOS!\n");
         }
+
+    return 0;
 }
+
 
