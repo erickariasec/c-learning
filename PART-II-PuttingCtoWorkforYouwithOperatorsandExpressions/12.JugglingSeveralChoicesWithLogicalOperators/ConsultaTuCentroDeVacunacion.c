@@ -11,7 +11,7 @@ main()
     setlocale(LC_ALL, "spanish");
 
     // SET UP VARIABLES
-    char Norte1[30] = "Parque Bicentenario";    // A-I
+    char Norte1[] = "Parque Bicentenario";    // A-I
     char Norte2[30] = "Colegio Central Tecnico";    // J-Q
     char Norte3[30] = "Universidad Catolica";   // R-Z
 
@@ -42,6 +42,7 @@ main()
 
     // APP CONSULTA TU CENTRO DE VACUNACIÓN
     printf("\n\n\t\t\t\t\tCONSULTA TU CENTRO DE VACUNACIÓN\n\n");
+    printf("The size of CentroNorte1 is %d\n", sizeof(Norte1));
 
     printf("Ingresa tu primer nombre:\n");
     scanf(" %s", name);
