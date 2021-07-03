@@ -11,7 +11,7 @@ main()
     setlocale(LC_ALL, "spanish");
 
     // SET UP VARIABLES
-    char Norte1[] = "Parque Bicentenario";    // A-I
+    char Norte1[30] = "Parque Bicentenario";    // A-I
     char Norte2[30] = "Colegio Central Tecnico";    // J-Q
     char Norte3[30] = "Universidad Catolica";   // R-Z
 
@@ -20,7 +20,7 @@ main()
     char Centro3[30] = "Unidad Educativa Municipal Sucre";    // R-Z
 
     char Sur1[30] = "Colegio Tecnico Quito";    // A-I
-    char Sur2[30] = "Colegio Consejo Provincial de Pichincha";    // J-Q
+    char Sur2[45] = "Colegio Consejo Provincial de Pichincha";    // J-Q
     char Sur3[30] = "Colegio Juan Pio Montufar";    // R-Z
 
     char name[25];
@@ -42,7 +42,6 @@ main()
 
     // APP CONSULTA TU CENTRO DE VACUNACIÓN
     printf("\n\n\t\t\t\t\tCONSULTA TU CENTRO DE VACUNACIÓN\n\n");
-    printf("The size of CentroNorte1 is %d\n", sizeof(Norte1));
 
     printf("Ingresa tu primer nombre:\n");
     scanf(" %s", name);
@@ -408,6 +407,11 @@ main()
         printf("SEGUNDA DOSIS: %s\n", secondDosis);
     }
 
+
+
+// PRINT FUNCTION - RONALD
+
+
     // Second Conditional Sur Jovenes: J-Q   12-40     Sur2
     if (((lastName[0] >= 'J') && (lastName[0] <= 'Q')) &&
         ((age >= 12) && (age <= 40) && (sector[0] == 'S')) ||
@@ -415,18 +419,7 @@ main()
        ((lastName[0] >= 'j') && (lastName[0] <= 'q')) &&
         ((age >= 12) && (age <= 40) && (sector[0] == 's')))
     {
-        printf("\n\n\n\n\t\t\t\t\t\tPLAN DE VACUNACIÓN\a\n");
-        printf("\t\t\t\t\t\t------------------\a\n\n\n");
-
-        printf("\t\t\t\t\t    %s %s %s %s\n\n", lastName, secondLastName, name, secondName);
-        printf("\t\t\t\t\t\t  CI: %d\n\n\n", id);
-
-        printf("PROVINCIA: Pichincha\n");
-        printf("CANTÓN: Quito\n");
-        printf("CENTRO DE VACUNACIÓN: %s\n", Sur2);
-        printf("PRIMERA DOSIS: %s\n", firstDosis2);
-        printf("HORARIO: %s\n", schedule2);
-        printf("SEGUNDA DOSIS: %s\n", secondDosis);
+        printUserInformation(lastName, secondLastName, name, secondName, id, Sur2, firstDosis2, schedule2, secondDosis);
     }
 
 
@@ -438,18 +431,7 @@ main()
        ((lastName[0] >= 'r') && (lastName[0] <= 'z')) &&
         ((age >= 41) && (sector[0] == 's')))
     {
-        printf("\n\n\n\n\t\t\t\t\t\tPLAN DE VACUNACIÓN\a\n");
-        printf("\t\t\t\t\t\t------------------\a\n\n\n");
-
-        printf("\t\t\t\t\t    %s %s %s %s\n\n", lastName, secondLastName, name, secondName);
-        printf("\t\t\t\t\t\t  CI: %d\n\n\n", id);
-
-        printf("PROVINCIA: Pichincha\n");
-        printf("CANTÓN: Quito\n");
-        printf("CENTRO DE VACUNACIÓN: %s\n", Sur3);
-        printf("PRIMERA DOSIS: %s\n", firstDosis1);
-        printf("HORARIO: %s\n", schedule1);
-        printf("SEGUNDA DOSIS: %s\n", secondDosis);
+        printUserInformation(lastName, secondLastName, name, secondName, id, Sur3, firstDosis1, schedule1, secondDosis);
     }
 
     // Third Conditional Sur Jovenes: R-Z   12-40     Sur3
@@ -459,18 +441,26 @@ main()
        ((lastName[0] >= 'r') && (lastName[0] <= 'z')) &&
         ((age >= 12) && (age <= 40) && (sector[0] == 's')))
     {
-        printf("\n\n\n\n\t\t\t\t\t\tPLAN DE VACUNACIÓN\a\n");
-        printf("\t\t\t\t\t\t------------------\a\n\n\n");
-
-        printf("\t\t\t\t\t    %s %s %s %s\n\n", lastName, secondLastName, name, secondName);
-        printf("\t\t\t\t\t\t  CI: %d\n\n\n", id);
-
-        printf("PROVINCIA: Pichincha\n");
-        printf("CANTÓN: Quito\n");
-        printf("CENTRO DE VACUNACIÓN: %s\n", Sur3);
-        printf("PRIMERA DOSIS: %s\n", firstDosis2);
-        printf("HORARIO: %s\n", schedule2);
-        printf("SEGUNDA DOSIS: %s\n", secondDosis);
+        printUserInformation(lastName, secondLastName, name, secondName, id, Sur3, firstDosis2, schedule2, secondDosis);
     }
     return 0;
 }
+
+
+// FUNCTION FOR PRINTING - IT IS AN INDEPENDENT FUNCTION
+
+void printUserInformation(char lastName[25], char secondLastName[25], char name[25], char secondName[25], int id, char sector[30], char vaccineDate[30], char schedule[30], char vaccineSecondDate[30]) {
+    printf("\n\n\n\n\t\t\t\t\t\tPLAN DE VACUNACIÓN\a\n");
+    printf("\t\t\t\t\t\t------------------\a\n\n\n");
+
+    printf("\t\t\t\t\t    %s %s %s %s\n\n", lastName, secondLastName, name, secondName);
+    printf("\t\t\t\t\t\t  CI: %d\n\n\n", id);
+
+    printf("PROVINCIA: Pichincha\n");
+    printf("CANTÓN: Quito\n");
+    printf("CENTRO DE VACUNACIÓN: %s\n", sector);
+    printf("PRIMERA DOSIS: %s\n", vaccineDate);
+    printf("HORARIO: %s\n", schedule);
+    printf("SEGUNDA DOSIS: %s\n", vaccineSecondDate);
+}
+
