@@ -140,7 +140,7 @@ main()
 
 
 
-    // BILL CALCULATION
+    // BILL CALCULATIONS
     totalBill = (peopleGroup * TICKET_COST);
 
 
