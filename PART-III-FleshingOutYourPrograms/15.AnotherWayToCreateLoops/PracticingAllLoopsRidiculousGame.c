@@ -118,6 +118,8 @@ main()
 
 //FOR LOOP
     // PRINT TICKETS
+
+    /* For ctr = 1 execute program one, after that increase 1 to ctr only if ctr <= PlayersNumber */
     for (ctr = 1; ctr <= playersNumber; ctr++)
     {
         printf("Ticket No. %d\n", ctr);
