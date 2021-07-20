@@ -70,3 +70,24 @@ Most beginning programmers ignore the return value and put either a 0 or a 1 in 
 YOU MUST REMEMBER TO ADD <stdlib.h> WITH THE #include DIRECTIVE IN EVERY PROGRAM THAT USES exit().
 */
 
+
+
+/*
+The do-while loop keeps the user honest. If the user enters something other than a number from 1 to 5, the ...is not
+a valid choice. message prints, thanks to the default keyword. C ensures that if none of the other cases matches
+the variable listed after switch, the default statements execute.
+
+DEFAULT works like ELSE
+
+ELSE takes care of an action if an if test is false, and DEFAULT takes care of an action if none of the other case
+conditions successfully matches the switch variable.
+
+Although default is optional (as is else), it’s good programming practice to use a default to handle unexpected
+switch values.
+*/
+
+
+
+/* The switch variable can be either an integer or a character variable. DO NOT USE A FLOAT OR A DOUBLE FOR THE
+SWITCH TEST. */
+
