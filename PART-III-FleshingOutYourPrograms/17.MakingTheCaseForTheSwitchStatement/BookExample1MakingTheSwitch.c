@@ -91,3 +91,21 @@ switch values.
 /* The switch variable can be either an integer or a character variable. DO NOT USE A FLOAT OR A DOUBLE FOR THE
 SWITCH TEST. */
 
+
+
+
+// BREAK AND SWITCH
+
+/*
+The switch statement shown earlier has several break statements scattered throughout the code. The break statements
+ensure that only one case executes. Without the break statements, the switch would “fall through” to the other case
+statements. Here is what would happen if the break statements were removed from the switch and the user answered
+with a choice of 2:
+
+        Get ready to enter the name of the contact you wish to change.
+        Which contact do you wish to call?
+        Which contact do you wish to text?
+
+The break keeps switch case statements from running together.
+The only reason the default condition’s message did not print is that the exit() function executed inside case (5).
+
