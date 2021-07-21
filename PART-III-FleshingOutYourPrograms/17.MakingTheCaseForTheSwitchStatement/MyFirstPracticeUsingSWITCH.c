@@ -58,7 +58,8 @@ main()
     printf("3. Comedy\n");
     printf("4. Horror\n");
     printf("5. Science Fiction\n");
-    printf("6. Drama\n");
+    printf("6. Drama\n\n");
+    printf("7. EXIT THE PROGRAM\n");
 
     // MAIN DO
     do
@@ -302,6 +303,12 @@ main()
                       }
                       while ((dramaMovieChoice < 1) || (dramaMovieChoice > 5));
                       return 0;
+
+
+
+            // EXITS THE PROGRAM
+            case(7):  printf("\nThanks for trying our program %s!\n\n\a", userFirstName);
+                      exit(1);
 
 
 
