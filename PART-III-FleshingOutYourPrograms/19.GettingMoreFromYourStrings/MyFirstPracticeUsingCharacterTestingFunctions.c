@@ -28,39 +28,42 @@ main()
     printf("\nUser Name: ");
     scanf(" %s", userName);
 
+    do
+    {
     printf("\nPassword: ");
     scanf(" %s", password);
 
-    for (testChar = 0; testChar < strlen(password); testChar++)
-    {
-        if (isdigit(password[testChar]))
+        for (testChar = 0; testChar < strlen(password); testChar++)
         {
-            hasDigit = 1;
-            continue;
+            if (isdigit(password[testChar]))
+            {
+                hasDigit = 1;
+                continue;
+            }
+            if (isupper(password[testChar]))
+            {
+                hasUpper = 1;
+                continue;
+            }
+            if(islower(password[testChar]))
+            {
+                hasLower = 1;
+            }
         }
-        if (isupper(password[testChar]))
-        {
-            hasUpper = 1;
-            continue;
-        }
-        if(islower(password[testChar]))
-        {
-            hasLower = 1;
-        }
-    }
 
-    if ((hasDigit) && (hasUpper) && (hasLower))
-    {
-        printf("\n\nSuccessful registration %s\n\n\a", userName);
-        printf("Enjoy using Feisbuk!\n\n");
+        if ((hasDigit) && (hasUpper) && (hasLower))
+        {
+            printf("\n\nSuccessful registration %s\n\a", userName);
+            printf("Enjoy using Feisbuk!\n\n");
+        }
+        else
+        {
+            printf("\n\nSorry, you could not register!\n\a");
+            printf("Your password needs minimum a lowercase letter, an uppercase letter and a number!\n");
+            printf("Try again!\n");
+        }
     }
-    else
-    {
-        printf("\n\nSorry, you could not register!\n\n\a");
-        printf("Your password needs minimum a lowercase letter, an uppercase letter and a number!\n\n");
-        printf("Return later to try again.\n");
-        printf("SEE YOU!\n\n");
-    }
+    while ((!hasDigit) || (!hasUpper) || (!hasLower));
 
 
 
