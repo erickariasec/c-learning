@@ -12,6 +12,12 @@ main()
     int hasUpper, hasLower, hasDigit;
     char email[30], userName[25], password[25];
 
+    // INITIALIZE VARIABLES TO 0
+    // DON'T FORGET TO INITIALIZE VARIABLES
+    // PLEASE!!!!!!!
+    hasUpper = hasLower = hasDigit = 0;
+
+    // PROGRAM EXECUTION
     printf("\n\n\t\t\t\t\t\tWelcome to Feisbuk\n\n");
 
     printf("Please register to continue:\n\n");
