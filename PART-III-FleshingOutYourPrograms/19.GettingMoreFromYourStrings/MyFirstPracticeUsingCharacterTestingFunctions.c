@@ -65,46 +65,5 @@ main()
     }
     while ((!hasDigit) || (!hasUpper) || (!hasLower));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*for (i = 0; i < strlen(password); i++)
-    {
-        if (isdigit(password[i]))
-        {
-            hasDigit = 1;
-            continue;
-        }
-        else if (isupper(password[i]))
-        {
-            hasUpper = 1;
-            continue;
-        }
-        else if (islower(password[i]))
-        {
-            hasLower = 1;
-        }
-    }
-
-    if ((hasDigit) && (hasUpper) && (hasLower))
-    {
-        printf("\n\nSuccessful Registration %s!\n\n\a", userName);
-        printf("It\'s time to enjoy time at Feisbuk!\n\n");
-    }
-
-    else
-    {
-        printf("\n\nSorry %s, your password needs minimum: a lowercase letter, an upper letter and a number.\n\n\a", userName);
-    }*/
     return 0;
 }
