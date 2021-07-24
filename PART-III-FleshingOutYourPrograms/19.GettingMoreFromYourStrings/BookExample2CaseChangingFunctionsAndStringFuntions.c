@@ -32,11 +32,30 @@ main()
 
        /* Concatenates the strings */
        strcat(fullLocation, city);
-       strcat(fullLocation, ", "); //Adds a comma and space between
-                                   // the city
+       strcat(fullLocation, ", "); //Adds a comma and space between the city
        strcat(fullLocation, st); //and the state abbreviation
 
        puts("\nYou live in ");
        puts(fullLocation);
        return(0);
 }
+
+
+/*
+strcat() has to be used three times: once to add the city, once for the comma, and once to tack the state onto
+the end of the city.
+
+puts() automatically puts a newline at the end of every string it prints. You don’t have to add a \n at the end
+of an output string unless you want an extra blank line printed.
+
+gets() converts the Enter keypress to a null zero to ensure that the data obtained from the keyboard winds up
+being a null-terminated string instead of an array of single characters.
+
+One of the most important reasons to use gets() over scanf() is that you can ask the user for strings that contain
+embedded spaces, such as a full name (first and last name).
+
+scanf() cannot accept strings with spaces.
+scanf() stops getting user input at the first space.
+
+with gets(), you could allow the user to type in titles with more than one word.
+*/
