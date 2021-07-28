@@ -8,7 +8,7 @@ Create a HEADER FILE that contatins all USER NAMES and VERIFY them in Login Menu
 #include "FeisbukUserNames.h"
 
 #include <stdio.h> // for: printf(), scanf(), putchar(), putch(), puts(), getchar(), getch(), gets()
-#include <string.h> // for: strlen()
+#include <string.h> // for: strlen(), strcmp()
 #include <ctype.h> // for: isdigit(), isalpha(), islower(), isupper(), tolower(), toupper()
 #include <stdlib.h> // for: exit() function
 
@@ -108,6 +108,14 @@ main()
     }
     while ((hasDigit != 1) || (hasLower != 1) || (hasUpper != 1));
 
+
+    // CREATE USERNAME
+    printf("Es el momento perfecto para crear tu nombre de usuario!\n");
+    printf("De preferencia escribe el nombre de usuario que mas usas en tus diferentes redes sociales.\n\n");
+    printf("\nEscribe tu nombre de usurario: ");
+    scanf(" %s", userName);
+    printf("Genial %s, asi sera mucho mas facil que tus amigos te encuentren!\n\n\a", name);
+
     // NOT RUNNING CURRENTLY
     /*// INICIAR SESION
     puts("\n\n\n\nPor tu seguridad te pedimos INICIAR SESION para verificar que los datos ingresados sean correctos:\n\n");
@@ -133,10 +141,9 @@ main()
     // CHOOSE ACTION TO DO
     printf("\n\nQue quieres realizar ahora?\n");
     printf("1. Subir Foto de Perfil.\n");
-    printf("2. Crear Nombre de Usuario.\n");
+    printf("2. Ver Personas que quiza Conozca.\n");
     printf("3. Publicar un Estado.\n");
-    printf("4. Ver Personas que quiza Conozca.\n");
-    printf("5. Cerrar Sesion.\n\n");
+    printf("4. Cerrar Sesion.\n\n");
 
     do
     {
@@ -144,7 +151,7 @@ main()
         scanf(" %d", &actionChoice);
         switch(actionChoice)
         {
-            // SUBIR FOTO DE PERFIL
+            // UPLOAD PROFILE PICTURE
             case(1): printf("\nParece que no tienes fotos disponibles al momento.\n\n");
                      printf("Te gustaria subir una nueva foto?\n");
                      printf("1. SI\n");
@@ -201,53 +208,44 @@ main()
                      }
                      return 0;
 
-            // CREAR NOMBRE DE USUARIO
-            case(2): printf("\nEscribe tu nombre de usurario: ");
-                     scanf(" %s", userName);
-                     /*do
-                     {
-                         printf("Personas:\n");
-                         printf("Darwin Toro\n");
-                     }
-                     while (userName == ERICK_ARIAS);
-                     break;
-                     do
-                     {
-                         printf("Personas:\n");
-                         printf("Sara Vega\n");
-                     }
-                     while (userName == NATHALY_VILLARROEL);
-                     break;*/
+
+            // PEOPLE YOU MAY KNOW
+            case(2): printf("\nEstas son las personas que quiza conozcas: \n\n\a");
+
                      if (strcmp(userName, ErickAriasUserName) == 0)
                      {
-                         printf("Hola Erick");
+                         printf("1. %s\n", DarwinToroErickAriasFriend);
+                         printf("2. %s\n", DavidLemaErickAriasFriend);
+                         printf("3. %s\n", AlexisSanchezErickAriasFriend);
                      }
-                     /*else if (userName == NATHALY_VILLARROEL())
-                     {
-                         printf("Hola Nathy");
-                     }*/
+
                      else if (strcmp(userName, NathalyVillarroelUserName) == 0)
                      {
-                         printf("Hola Nathy");
+                         printf("1. %s\n", SaraVegaNathyVillarroelFriend);
+                         printf("2. %s\n", JosythaTorresNathyVillarroelFriend);
+                         printf("3. %s\n", MelFranchescaNathyVillarroelFriend);
                      }
                      else if (strcmp(userName, JoseAriasUserName) == 0)
                      {
-                         printf("Hola Pepe");
+                         printf("1. %s\n", BettyAriasJoseAriasFriend);
+                         printf("2. %s\n", ManuelQuilcaJoseAriasFriend);
+                         printf("3. %s\n", HildaSanchezJoseAriasFriend);
                      }
                      else
                      {
-                         printf("\n\nThat is not a valid user name, try again!\a");
+                         printf("\n\nLO SENTIMOS!\n\a");
+                         printf("No pudimos encontrar informacion relacionada a personas que quiza conozcas.\n");
+                         printf("Tus datos no se han registrado correctamente en la base de datos!\n\n");
                      }
                      return 0;
 
-            // PUBLICAR UN ESTADO
+
+            // PUBLISH A STATUS
             case(3): printf("NO");
 
-            // PERSONAS QUE QUIZÁ CONOZCA
-            case(4): printf("NO");
 
-            // CERRAR SESIÓN
-            case(5): printf("\nAcabas de cerrar sesion exitosamente %s!\n\a", name);
+            // SIGN OFF
+            case(4): printf("\nAcabas de cerrar sesion exitosamente %s!\n\a", name);
                      printf("Esperamos verte pronto por aqui!\n\n");
                      exit(1);
 
@@ -256,7 +254,7 @@ main()
                      break;
         }
     }
-    while ((actionChoice < 1) || (actionChoice > 5));
+    while ((actionChoice < 1) || (actionChoice > 4));
 
     return 0;
 }
