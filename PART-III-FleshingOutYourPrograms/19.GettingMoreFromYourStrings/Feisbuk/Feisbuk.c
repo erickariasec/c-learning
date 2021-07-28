@@ -18,11 +18,14 @@ Create a HEADER FILE that contatins all USER NAMES and VERIFY them in Login Menu
 #define YES 1
 #define NO 2
 
+#define MENU 0
+
 main()
 {
     // SET UP VARIABLES
     char name[20], lastName[20], userName[20], phoneNumber[11], email[30], password[25], passwordRetry[30], emailLogin[30], passwordLogin[25];
     char fullName[40] = "";
+    char publishStatus[100];
     char yesNoInput[1];
     int day, month, year, sex;
     int checkCharPassword, hasDigit, hasLower, hasUpper;
@@ -138,123 +141,130 @@ main()
     }*/
 
 
-    // CHOOSE ACTION TO DO
-    printf("\n\nQue quieres realizar ahora?\n");
-    printf("1. Subir Foto de Perfil.\n");
-    printf("2. Ver Personas que quiza Conozca.\n");
-    printf("3. Publicar un Estado.\n");
-    printf("4. Cerrar Sesion.\n\n");
-
     do
     {
-        printf("INGRESA EL NUMERO DE LA ACCION QUE DESEAS REALIZAR: ");
-        scanf(" %d", &actionChoice);
-        switch(actionChoice)
+        // CHOOSE ACTION TO DO
+        printf("\n\nQue quieres realizar ahora?\n");
+        printf("1. Subir Foto de Perfil.\n");
+        printf("2. Ver Personas que quiza Conozca.\n");
+        printf("3. Publicar un Estado.\n");
+        printf("4. Cerrar Sesion.\n\n");
+
+        do
         {
-            // UPLOAD PROFILE PICTURE
-            case(1): printf("\nParece que no tienes fotos disponibles al momento.\n\n");
-                     printf("Te gustaria subir una nueva foto?\n");
-                     printf("1. SI\n");
-                     printf("2. NO\n\n");
+            printf("INGRESA EL NUMERO DE LA ACCION QUE DESEAS REALIZAR: ");
+            scanf(" %d", &actionChoice);
+            switch(actionChoice)
+            {
+                // UPLOAD PROFILE PICTURE
+                case(1): printf("\nParece que no tienes fotos disponibles al momento.\n\n");
+                         printf("Te gustaria subir una nueva foto?\n");
+                         printf("1. SI\n");
+                         printf("2. NO\n\n");
 
-                     printf("ENTER YOUR CHOICE: ");
-                     scanf(" %d", &shortAnswer);
+                         printf("ENTER YOUR CHOICE: ");
+                         scanf(" %d", &shortAnswer);
 
-                     if (shortAnswer == YES)
-                     {
-                         printf("Aqui esta:\n\n");
-                         if (sex == HOMBRE)
+                         if (shortAnswer == YES)
                          {
-                             printf("***************************\n");
-                             printf("***************************\n");
-                             printf("**                       **\n");
-                             printf("**                       **\n");
-                             printf("**     ****    ****      **\n");
-                             printf("**     ****    ****      **\n");
-                             printf("**                       **\n");
-                             printf("**                       **\n");
-                             printf("**     ****    ****      **\n");
-                             printf("**      ||******||       **\n");
-                             printf("**        ******         **\n");
-                             printf("**                       **\n");
-                             printf("**                       **\n");
-                             printf("***************************\n");
-                             printf("***************************\n");
+                             printf("Aqui esta:\n\n");
+                             if (sex == HOMBRE)
+                             {
+                                 printf("***************************\n");
+                                 printf("***************************\n");
+                                 printf("**                       **\n");
+                                 printf("**                       **\n");
+                                 printf("**     ****    ****      **\n");
+                                 printf("**     ****    ****      **\n");
+                                 printf("**                       **\n");
+                                 printf("**                       **\n");
+                                 printf("**     ****    ****      **\n");
+                                 printf("**      ||******||       **\n");
+                                 printf("**        ******         **\n");
+                                 printf("**                       **\n");
+                                 printf("**                       **\n");
+                                 printf("***************************\n");
+                                 printf("***************************\n");
 
+                             }
+                             else
+                             {
+                                 printf("       ***************************         \n");
+                                 printf("       ***************************         \n");
+                                 printf("       **                       **         \n");
+                                 printf("       **                       **         \n");
+                                 printf("       **     ****    ****      **         \n");
+                                 printf("       **     ****    ****      **         \n");
+                                 printf("       **                       **         \n");
+                                 printf("       **                       **         \n");
+                                 printf("       **     ****    ****      **         \n");
+                                 printf("       **      ||******||       **         \n");
+                                 printf("**     **        ******         **       **\n");
+                                 printf("**     **                       **       **\n");
+                                 printf("**     **                       **       **\n");
+                                 printf("*******************************************\n");
+                                 printf("*******************************************\n");
+                             }
+                             printf("\nFoto cargada con exito!\n\n\a");
                          }
                          else
                          {
-                             printf("       ***************************         \n");
-                             printf("       ***************************         \n");
-                             printf("       **                       **         \n");
-                             printf("       **                       **         \n");
-                             printf("       **     ****    ****      **         \n");
-                             printf("       **     ****    ****      **         \n");
-                             printf("       **                       **         \n");
-                             printf("       **                       **         \n");
-                             printf("       **     ****    ****      **         \n");
-                             printf("       **      ||******||       **         \n");
-                             printf("**     **        ******         **       **\n");
-                             printf("**     **                       **       **\n");
-                             printf("**     **                       **       **\n");
-                             printf("*******************************************\n");
-                             printf("*******************************************\n");
+                             printf("No hay problema, quiza en otra ocasión\n\n\a");
                          }
-                         printf("\nFoto cargada con exito!\n\n\a");
-                     }
-                     else
-                     {
-                         printf("No hay problema, quiza en otra ocasión\n\n\a");
-                     }
-                     return 0;
+                         break;
 
 
-            // PEOPLE YOU MAY KNOW
-            case(2): printf("\nEstas son las personas que quiza conozcas: \n\n\a");
+                // PEOPLE YOU MAY KNOW
+                case(2): printf("\nEstas son las personas que quiza conozcas: \n\n\a");
 
-                     if (strcmp(userName, ErickAriasUserName) == 0)
-                     {
-                         printf("1. %s\n", DarwinToroErickAriasFriend);
-                         printf("2. %s\n", DavidLemaErickAriasFriend);
-                         printf("3. %s\n", AlexisSanchezErickAriasFriend);
-                     }
+                         if (strcmp(userName, ErickAriasUserName) == 0)
+                         {
+                             printf("1. %s\n", DarwinToroErickAriasFriend);
+                             printf("2. %s\n", DavidLemaErickAriasFriend);
+                             printf("3. %s\n", AlexisSanchezErickAriasFriend);
+                         }
 
-                     else if (strcmp(userName, NathalyVillarroelUserName) == 0)
-                     {
-                         printf("1. %s\n", SaraVegaNathyVillarroelFriend);
-                         printf("2. %s\n", JosythaTorresNathyVillarroelFriend);
-                         printf("3. %s\n", MelFranchescaNathyVillarroelFriend);
-                     }
-                     else if (strcmp(userName, JoseAriasUserName) == 0)
-                     {
-                         printf("1. %s\n", BettyAriasJoseAriasFriend);
-                         printf("2. %s\n", ManuelQuilcaJoseAriasFriend);
-                         printf("3. %s\n", HildaSanchezJoseAriasFriend);
-                     }
-                     else
-                     {
-                         printf("\n\nLO SENTIMOS!\n\a");
-                         printf("No pudimos encontrar informacion relacionada a personas que quiza conozcas.\n");
-                         printf("Tus datos no se han registrado correctamente en la base de datos!\n\n");
-                     }
-                     return 0;
-
-
-            // PUBLISH A STATUS
-            case(3): printf("NO");
+                         else if (strcmp(userName, NathalyVillarroelUserName) == 0)
+                         {
+                             printf("1. %s\n", SaraVegaNathyVillarroelFriend);
+                             printf("2. %s\n", JosythaTorresNathyVillarroelFriend);
+                             printf("3. %s\n", MelFranchescaNathyVillarroelFriend);
+                         }
+                         else if (strcmp(userName, JoseAriasUserName) == 0)
+                         {
+                             printf("1. %s\n", BettyAriasJoseAriasFriend);
+                             printf("2. %s\n", ManuelQuilcaJoseAriasFriend);
+                             printf("3. %s\n", HildaSanchezJoseAriasFriend);
+                         }
+                         else
+                         {
+                             printf("\n\nLO SENTIMOS!\n\a");
+                             printf("No pudimos encontrar informacion relacionada a personas que quiza conozcas.\n");
+                             printf("Tus datos no se han registrado correctamente en la base de datos!\n\n");
+                         }
+                         break;
 
 
-            // SIGN OFF
-            case(4): printf("\nAcabas de cerrar sesion exitosamente %s!\n\a", name);
-                     printf("Esperamos verte pronto por aqui!\n\n");
-                     exit(1);
+                // PUBLISH A STATUS
+                case(3): printf("\nEscribe como te sientes: (1 palabra maximo)\n\n");
+                         scanf(" %s",publishStatus);
+                         printf("\n\nTu estado ha sido publicado exitosamente %s!\a\n\n", name);
+                         break;
 
-            default: printf("\nEsa no es una opcion valida %s!\n\a", name);
-                     printf("INTENTALO NUEVAMENTE!\n\n");
-                     break;
+
+                // SIGN OFF
+                case(4): printf("\nAcabas de cerrar sesion exitosamente %s!\n\a", name);
+                         printf("Esperamos verte pronto por aqui!\n\n");
+                         exit(1);
+
+                default: printf("\nEsa no es una opcion valida %s!\n\a", name);
+                         printf("INTENTALO NUEVAMENTE!\n\n");
+                         break;
+            }
         }
+        while ((actionChoice <= -1) || (actionChoice > 4));
     }
-    while ((actionChoice < 1) || (actionChoice > 4));
+    while (MENU == 0);
 
     return 0;
 }
