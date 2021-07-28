@@ -21,7 +21,7 @@ Create a HEADER FILE that contatins all USER NAMES and VERIFY them in Login Menu
 main()
 {
     // SET UP VARIABLES
-    char name[20], lastName[20], phoneNumber[11], email[30], password[25], passwordRetry[30], emailLogin[30], passwordLogin[25];
+    char name[20], lastName[20], userName[20], phoneNumber[11], email[30], password[25], passwordRetry[30], emailLogin[30], passwordLogin[25];
     char fullName[40] = "";
     char yesNoInput[1];
     int day, month, year, sex;
@@ -134,7 +134,7 @@ main()
     printf("\n\nQue quieres realizar ahora?\n");
     printf("1. Subir Foto de Perfil.\n");
     printf("2. Crear Nombre de Usuario.\n");
-    printf("3. Escribir un Estado.\n");
+    printf("3. Publicar un Estado.\n");
     printf("4. Ver Personas que quiza Conozca.\n");
     printf("5. Cerrar Sesion.\n\n");
 
@@ -199,12 +199,48 @@ main()
                      {
                          printf("No hay problema, quiza en otra ocasión\n\n\a");
                      }
-                     break;
+                     return 0;
 
             // CREAR NOMBRE DE USUARIO
-            case(2): printf("\nEste es tu nombre de usurario: \n\n");
+            case(2): printf("\nEscribe tu nombre de usurario: ");
+                     scanf(" %s", userName);
+                     /*do
+                     {
+                         printf("Personas:\n");
+                         printf("Darwin Toro\n");
+                     }
+                     while (userName == ERICK_ARIAS);
+                     break;
+                     do
+                     {
+                         printf("Personas:\n");
+                         printf("Sara Vega\n");
+                     }
+                     while (userName == NATHALY_VILLARROEL);
+                     break;*/
+                     if (strcmp(userName, ErickAriasUserName) == 0)
+                     {
+                         printf("Hola Erick");
+                     }
+                     /*else if (userName == NATHALY_VILLARROEL())
+                     {
+                         printf("Hola Nathy");
+                     }*/
+                     else if (strcmp(userName, NathalyVillarroelUserName) == 0)
+                     {
+                         printf("Hola Nathy");
+                     }
+                     else if (strcmp(userName, JoseAriasUserName) == 0)
+                     {
+                         printf("Hola Pepe");
+                     }
+                     else
+                     {
+                         printf("\n\nThat is not a valid user name, try again!\a");
+                     }
+                     return 0;
 
-            // ESCRIBIR UN ESTADO
+            // PUBLICAR UN ESTADO
             case(3): printf("NO");
 
             // PERSONAS QUE QUIZÁ CONOZCA
