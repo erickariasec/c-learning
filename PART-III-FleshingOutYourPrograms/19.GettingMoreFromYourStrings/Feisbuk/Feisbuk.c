@@ -25,7 +25,7 @@ main()
     // SET UP VARIABLES
     char name[20], lastName[20], userName[20], phoneNumber[11], email[30], password[25], passwordRetry[30], emailLogin[30], passwordLogin[25];
     char fullName[40] = "";
-    char publishStatus[100];
+    char publishStatus[15];
     char yesNoInput[1];
     int day, month, year, sex;
     int checkCharPassword, hasDigit, hasLower, hasUpper;
@@ -262,7 +262,7 @@ main()
                          break;
             }
         }
-        while ((actionChoice <= -1) || (actionChoice > 4));
+        while ((actionChoice < 1) || (actionChoice > 4));
     }
     while (MENU == 0);
 
