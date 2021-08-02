@@ -13,9 +13,11 @@ main()
     float multiplicateFirstValue, multiplicateSecondValue, multiplicateResult; // MULTIPLICATION
     float divisionFirstValue, divisionSecondValue, divisionResult; // DIVISION
     float userSqrt; // SQUARE ROOT
-    float numberToRaise, powerOfNumber;
+    float numberToRaise, powerOfNumber; // RAISE NUMBER TO A POWER
+    float getCosine, getSine, getTangent, getArcCosine, getArcSine, getArcTangent; // TRIGONOMETRY
+    float getExponentialFunction, getNaturalLog, getBase10Log;
 
-    int choiceOperation;
+    int choiceOperation, trigonometryChoice, logFunctionChoice;
 
     printf("\n\n\t\t\t\t\t\tSOLVE YOUR MATH PROBLEMS\n");
     printf("\t\t\t\t\t\t------------------------\n\n");
@@ -90,9 +92,77 @@ main()
                          break;
 
                 case(7): printf("\n\nOk, Let\'s do some trigonometry!\n\n");
+                         printf("1. Get Cosine.\n");
+                         printf("2. Get Sine.\n");
+                         printf("3. Get Tangent.\n");
+                         printf("4. Get Arc Cosine.\n");
+                         printf("5. Get Arc Sine.\n");
+                         printf("6. Get Arc Tangent.\n");
+
+                         printf("\n\nEnter the number of the operation you want to do: ");
+                         scanf(" %d", &trigonometryChoice);
+                         switch(trigonometryChoice)
+                         {
+                             case(1): printf("Get cosine of: (degrees) ");
+                                      scanf(" %f", &getCosine);
+                                      printf("Your result is: %.3f\n\n\n\n\n\a", cos((getCosine * (3.14159/180.0))));
+                                      break;
+
+                             case(2): printf("Get sine of: (degrees) ");
+                                      scanf(" %f", &getSine);
+                                      printf("Your result is: %.3f\n\n\n\n\n\a", sin((getSine * (3.14159/180.0))));
+                                      break;
+
+                             case(3): printf("Get tangent of: (degrees) ");
+                                      scanf(" %f", &getTangent);
+                                      printf("Your result is: %.3f\n\n\n\n\n\a", tan((getTangent * (3.14159/180.0))));
+                                      break;
+
+                             case(4): printf("Get arc cosine of: (degrees) ");
+                                      scanf(" %f", &getArcCosine);
+                                      printf("Your result is: %.3f\n\n\n\n\n\a", acos((getArcCosine * (3.14159/180.0))));
+                                      break;
+
+                             case(5): printf("Get arc sine of: (degrees) ");
+                                      scanf(" %f", &getArcSine);
+                                      printf("Your result is: %.3f\n\n\n\n\n\a", asin((getArcSine * (3.14159/180.0))));
+                                      break;
+
+                             case(6): printf("Get arc tangent of: (degrees) ");
+                                      scanf(" %f", &getArcTangent);
+                                      printf("Your result is: %.3f\n\n\n\n\n\a", atan((getArcTangent * (3.14159/180.0))));
+                                      break;
+
+                             default: printf("\n\nThat is not a valid number choice...\n\a");
+                                      printf("TRY AGAIN!\n\n");
+                                      break;
+                         }
                          break;
 
                 case(8): printf("\n\nOk, Let\'s do some log functions!\n\n");
+                         printf("1. Exponential Function.\n");
+                         printf("2. Get Natural Log.\n");
+                         printf("3. Get the Base 10 Log.\n");
+
+                         printf("\n\nEnter the number of the operation you want to do: ");
+                         scanf(" %d", &logFunctionChoice);
+                         switch(logFunctionChoice)
+                         {
+                             case(1): printf("e raised to: ");
+                                      scanf(" %f", &getExponentialFunction);
+                                      printf("Your result is: %.3f\n\n\n\n\n\a", exp(getExponentialFunction));
+                                      break;
+
+                             case(2): printf("Get the natural log of: ");
+                                      scanf(" %f", &getNaturalLog);
+                                      printf("Your result is: %.3f\n\n\n\n\n\a", log(getNaturalLog));
+                                      break;
+
+                             case(3): printf("Get the base-10 log of: ");
+                                      scanf(" %f", &getBase10Log);
+                                      printf("Your result is: %.3f\n\n\n\n\n\a", log10(getBase10Log));
+                                      break;
+                         }
                          break;
 
                 case(9): printf("\n\nIt has been a pleasure to help you solving this problems!\n\n\a");
