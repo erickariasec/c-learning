@@ -56,7 +56,9 @@ RESUME:
 #include <math.h>
 #include <stdio.h>
 
+fabs() // Returns absolute value (stores positive version number) (ex. -25.56 -> 25.56)
+
 pow() // Raises a value to a power (ex. 4³ = 64)
 sqrt() // Square root of a value (ex. √81 = 9)
 floor() // Approximate to the lower value (ex. 18.5 stores 18)
-ceil() // Aproxima al valor superior (ex. 18.5 stores 19)
+ceil() // Approximate to the higher value (ex. 18.5 stores 19)
