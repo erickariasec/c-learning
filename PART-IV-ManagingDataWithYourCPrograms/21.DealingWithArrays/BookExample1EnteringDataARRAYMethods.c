@@ -55,10 +55,17 @@ main()
 
 
 /*
-
 So this program is designed to show you two different ways you can add values to a variable array. It’s a bit
 impersonal, so if you wanted, you could add a string array for the player’s name at the beginning of the program;
 then the prompts for the individual game scores and the final average could incorporate that name.
+*/
 
+/*
+WARNING:
+Don’t make the same mistake we made. The first time we ran the program, we got a scoring average of 42,000 per
+game (which we are fairly certain would be a record for an individual player). Why did this happen? When we
+defined the variable totalPoints, we did not set it to 0 initially, and as we’ve reminded you throughout the
+book (but did not apply to our own program), you cannot assume that, just because you define a variable, it is
+initially empty or 0.
 */
 
