@@ -52,3 +52,10 @@ main()
 
     return(0);
 }
+
+
+/*
+So this program is designed to show you two different ways you can add values to a variable array. It’s a bit
+impersonal, so if you wanted, you could add a string array for the player’s name at the beginning of the program;
+then the prompts for the individual game scores and the final average could incorporate that name.
+*/
