@@ -8,7 +8,7 @@ Before going further, you need to learn two new operators:
         OPERATOR    |   DESCRIPTION
        ----------------------------------------
          &          |   Address of the operator
-         *          |   Deferencing operator
+         *          |   Dereferencing operator
        ----------------------------------------
 
 You’ve seen the * before. How does C know the difference between multiplication and dereferencing? The context of how
