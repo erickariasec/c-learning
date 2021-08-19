@@ -98,3 +98,38 @@ main()
     }
     return(0);
 }
+
+
+/* Before seeing this program, you mastered both array searching and array sorting. This program simply puts the two
+procedures together. About the only additional job this program does is keep the two parallel arrays in synch during
+the search.
+As you can see from the body of the search code, when customer ID elements are swapped (within the custID array), the
+corresponding (via the subscript) element in the customer balance array is searched.
+
+An early search termination could take place because of the following:
+
+        if (custID[ctr] > idSearch)  // No need to keep searching
+        {
+              break;
+        }
+
+Keeping arrays sorted is not always easy or efficient.
+For instance, you don’t want your program sorting a large array every time you add, change, or delete a value from the
+array. After storing several thousand values in an array, sorting the array after adding each value takes too much time,
+even for fast computers.
+Advanced ways of manipulating arrays ensure that you always insert items in sorted order.
+(However, such techniques are way beyond the scope of this book.) You’re doing well without complicating things too
+much here.
+*/
+
+
+
+/*
+• The nested for loop, such as the one you saw in this chapter, is a perfect statement to produce a bubble sort.
+
+• Don’t swap the values of two variables unless you introduce a third temporary variable to hold the in-between value.
+
+• Sorting routines doesn’t have to be hard; start with the one listed in this chapter, and adapt it to your own needs.
+
+• Don’t forget to keep your arrays sorted. You’ll speed up searching for values.
+*/
