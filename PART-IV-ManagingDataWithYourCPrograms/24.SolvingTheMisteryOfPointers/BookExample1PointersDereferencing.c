@@ -88,4 +88,12 @@ main()
 
 /* There’s nothing too ground-breaking or complicated in this program. It’s more to get you used to using pointers,
 including declaring, setting, and referencing pointers of all kinds. Again, when you use functions that take and
-return data, you will find yourself in need of pointers constantly.
+return data, you will find yourself in need of pointers constantly. */
+
+
+/* A pointer variable is nothing more than a variable that holds the location of another variable.
+Because pointers offer more flexibility than arrays, many C programmers stop using arrays when they master pointers.
+Use the & to produce the address of a variable.
+Use the * to define a pointer variable and to dereference a pointer variable.
+Don’t worry about the exact address that C uses for variable storage. If you use &, C takes care of the rest.
+Don’t forget to use * when dereferencing your pointer, or you’ll get the wrong value. */
