@@ -7,7 +7,6 @@ main()
     // SET UP VARIABLES
     int userNumbers[5] = {};
     int ctr, inner, outer, aux, didSwap;
-    didSwap = 0;
     aux = 0;
 
     printf("\n\n\t\t\t\t\t\tORDERING YOUR NUMBERS\n");
@@ -24,6 +23,7 @@ main()
 
     for(outer = 0; outer < 4; outer++)
     {
+        didSwap = 0;
         for(inner = outer; inner < 5; inner++)
         {
             if(userNumbers[inner] < userNumbers[outer])
@@ -45,4 +45,5 @@ main()
         printf("This is number %d now: %d\n", ctr+1, userNumbers[ctr]);
     }
 
+    return 0;
 }
